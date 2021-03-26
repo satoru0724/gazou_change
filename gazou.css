@@ -1,0 +1,100 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 5%;         
+  font-size     : 18pt;       
+  text-align    : center;      
+  cursor        : pointer;     
+  padding       : 15px 20px;   
+  background    : #1d1d31;    
+  color         : #ffffff;     
+  line-height   : 1em;         
+  transition    : .3s;         
+  box-shadow    : none;
+  border        : 2px solid #ddddec;   
+}
+
+.button:hover {
+  box-shadow    : none;       
+  color         : #0b0b1d;     
+  background    : #ffffff;     
+}
+
+header {
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #212529;
+  color: #ccc;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  width: 970px;          
+	margin: 10px auto 0;    
+	padding-bottom: 150px;  
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.button_wrapper{
+  text-align:center;
+  margin-top: 10px;
+ }
+
+
+#dragDropArea{
+  background-color: #f4f4f4;
+  margin: 10px;
+  padding: 10px;
+  border: #ddd dashed 5px;
+  min-height: 200px;
+  text-align: center;
+  width: 700px;
+  
+}
+#dragDropArea p{
+  color: #999;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 1.4em;
+}
+#dragDropArea .drag-drop-buttons{
+  margin-top: 20px;
+  font-size: 12px;
+  font-size: 1.2em;
+}
+.drag-drop-buttons input{
+  margin: auto;
+}
+
+main {
+  flex: 1;
+}
+
+.footer  {
+  width: 100%;
+  height: 30px;
+  background-color: #212529;
+  color: #fff;
+  text-align: center;
+  bottom: 0;                   
+}
