@@ -1,6 +1,6 @@
 <?php
-    $fullPath="python C:\MAMP\htdocs\gazou.py";
+    $command="python --";
     $str = mb_convert_encoding($fullPath, "utf-8", "sjis");
-    exec($fullPath, $output);
+    exec($command, $output);
     print "$output[0]";
 ?>
