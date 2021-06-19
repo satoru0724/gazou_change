@@ -1,1 +1,1 @@
-<?php include_once("gazou.html"); ?>
+<?php include_once("image.php"); ?>
