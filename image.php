@@ -32,6 +32,12 @@ if($result){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="image.css">
   <title>画像をテキストに変換</title>
+  <script>
+　　function change_question() {
+    　var select = confirm("テキストを読み取りますか？");
+    　return select;
+　　}
+　</script>
 </head>
 <body>
 <header>
@@ -39,46 +45,53 @@ if($result){
     <a>画像からテキスト変換</a>
   </h1>
 </header>
+<!--背景用クラス-->
+<div class="bg_pattern Paper_v2"></div>
+
 <main>
- 
+
+
 <section class="form-container">
- 
-<!--  メッセージを表示している箇所-->
+
+<!--メッセージ部分 -->
 <p><?php if(!empty($MSG)) echo $MSG;?></p>
  
-  <!-- 画像を表示している箇所 -->
-  <?php if(!empty($img_path)){;?>
+  
+  <!--画像部分 -->
+<?php if(!empty($img_path)){;?>
+  <img src="<?php echo $img_path;?>" alt="">
+<?php } ;?>
  
-   <img src="<?php echo $img_path;?>" alt="">
- 
-  <?php } ;?>
- 
- 
-  <!-- （1）form タグからpost送信する -->
+ <!--アップロードボタン -->
+<form action="" method="post" enctype="multipart/form-data">
+  <input type="file" name="upload_image">
+  <input type="submit" class="btn_submit" value="アップロード">
+</form>
 
-  <form action="" method="post" enctype="multipart/form-data">
- 
-    <!-- input 属性はtype="file" と指定-->
-    
-      <input type="file" name="upload_image">
-    
-    
-    <!-- 送信ボタン -->
-   
-    <input type="submit" class="btn_submit" value="アップロード">
+  <!--変換ボタン -->
+<form name="change" method="post" onclick="change_question()" >
+  <input type="submit"  name="change" class="btn_change" value="変換">
+</form>
 
-  </form>
+<!--python起動コード -->
+<?php
+  if(isset($_POST["change"])){
+    $command= 'C:\Users\satoru\AppData\Local\Programs\Python\Python39 C:\Users\satoru\awesome\images_after';
+    exec($command, $output);
+    var_dump ($output);
+  }
+?>
 
-  <form action="gazou.php" method="post">
-    <input type="submit" class="btn_change" value="変換">
-  </form>
+<!--手順 -->
+  <p>ファイルを選択⇒アップロード⇒変換</p>
+
 </section>
- 
+ <!--画像表示エリア -->
 <section class="img-area">
  
 <?php
 if(!empty($img_path)){  ?>
-<!-- （5）ローカルフォルダに移動した画像を画面に表示する -->
+
  <img src="echo <?php $img_path;?>" alt="">
 <?php
 }
