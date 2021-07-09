@@ -1,6 +1,9 @@
 #import pathlib
+#import os
 
 #path = pathlib.Path('./image_after')
 #for name in path.glob('*.jpg'):
 
-    print('line')
+#dir = 'C:\\Users\satoru\Desktop\GBS/hoge'
+#os.mkdir(dir)
+print('hoge')
