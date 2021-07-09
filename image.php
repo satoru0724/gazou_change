@@ -76,9 +76,12 @@ if($result){
 <!--python起動コード -->
 <?php
   if(isset($_POST["change"])){
-    $command= 'C:\Users\satoru\AppData\Local\Programs\Python\Python39 C:\Users\satoru\awesome\images_after';
-    exec($command, $output);
+    #$command= 'C:\Users\satoru\AppData\Local\Programs\Python C:\Users\satoru\awesome\image.py';
+    exec("export LANG=ja_JP.UTF-8");
+    #exec('python C:\\Users\satoru\awesome\image.py > /dev/null', $output, $result);
+    exec('python '  . _DIR_ . '/image.py > /dev/null &', $output, $result);
     var_dump ($output);
+    echo $result;
   }
 ?>
 
